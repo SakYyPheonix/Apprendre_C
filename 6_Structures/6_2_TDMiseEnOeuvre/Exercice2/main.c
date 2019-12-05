@@ -18,7 +18,8 @@ int main() {
     
     toto = creePersonne();
 
-    printf("%s %s est nee en %u, il mesure %.2f m et pese %.2f kg\n", toto.prenom, toto.nom, toto.annee, toto.taille, toto.poids);
+    afficherPersonne(toto);
+    
     return (0);
 }
 

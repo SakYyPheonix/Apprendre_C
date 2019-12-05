@@ -15,10 +15,16 @@
  */
 int main() {
     typePersonne toto;
+    typePersonne *titi;
     
     toto = creePersonne();
 
-    printf("%s %s est nee en %u, il mesure %.2f m et pese %.2f kg\n", toto.prenom, toto.nom, toto.annee, toto.taille, toto.poids);
+    afficherPersonne(toto);
+    
+    titi = creePersonnePtr();
+    
+     printf("%s %s est nee en %u, il mesure %.2f m et pese %.2f kg\n", titi->prenom, titi->nom, titi->annee, titi->taille, titi->poids);
+    
     return (0);
 }
 
