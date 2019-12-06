@@ -1,0 +1,32 @@
+
+
+/* 
+ * File:   biblio.h
+ * Author: cbourgouin
+ *
+ * Created on 6 décembre 2019, 15:04
+ */
+
+#ifndef BIBLIO_H
+#define BIBLIO_H
+#define NBCARAMAX 50
+#define NBCARABADGE 11
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+    typedef struct adherent{
+        char nom[NBCARAMAX];
+        char prenom[NBCARAMAX];
+        char numBadge[NBCARABADGE];
+        int numActivite;
+    }typeAdherent;
+
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif /* BIBLIO_H */
+
