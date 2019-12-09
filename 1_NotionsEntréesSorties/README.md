@@ -17,9 +17,9 @@
  - `scanf("%type",  &variable);`
 **type**
 
-`%i`,`%u`,`%d`	pour les entier
-`%f`,`%e`,`%g`  pour les réel
-`%c` pour un caractère
+`%i`,`%u`,`%d`	pour les entier.
+`%f`,`%e`,`%g`  pour les réel.
+`%c` pour un caractère.
 
  - `scanf("%s", variable);`
 	 Pour les chaines de caractère
