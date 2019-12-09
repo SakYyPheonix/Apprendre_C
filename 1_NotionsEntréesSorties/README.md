@@ -14,18 +14,18 @@
 
 ## Entrées du clavier
 
-`scanf("%type",  &variable);`
+    `scanf("%type",  &variable);`
 **type**
 `%i`,`%u`,`%d` pour les entier
 `%f`,`%e`,`%g` pour les réel
 `%c` pour un caractère
 
-`scanf("%s", variable);`
+    `scanf("%s", variable);`
 Pour les chaines de caractère
 **Attention**, ne prend pas en charge les espaces
  
- `gets(variable);`
+     `gets(variable);`
  
  ## Sorties sur l'écran
  
-- `printf("%type", variable);`
+     `printf("%type", variable);`
