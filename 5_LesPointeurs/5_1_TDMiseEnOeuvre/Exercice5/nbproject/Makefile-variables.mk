@@ -7,21 +7,21 @@ CND_BASEDIR=`pwd`
 CND_BUILDDIR=build
 CND_DISTDIR=dist
 # Debug configuration
-CND_PLATFORM_Debug=Cygwin-Windows
-CND_ARTIFACT_DIR_Debug=dist/Debug/Cygwin-Windows
-CND_ARTIFACT_NAME_Debug=exercice5
-CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin-Windows/exercice5
-CND_PACKAGE_DIR_Debug=dist/Debug/Cygwin-Windows/package
-CND_PACKAGE_NAME_Debug=exercice5.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin-Windows/package/exercice5.tar
+CND_PLATFORM_Debug=GNU-Linux
+CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-Linux
+CND_ARTIFACT_NAME_Debug=exercice5_bis
+CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux/exercice5_bis
+CND_PACKAGE_DIR_Debug=dist/Debug/GNU-Linux/package
+CND_PACKAGE_NAME_Debug=exercice5bis.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux/package/exercice5bis.tar
 # Release configuration
-CND_PLATFORM_Release=Cygwin-Windows
-CND_ARTIFACT_DIR_Release=dist/Release/Cygwin-Windows
-CND_ARTIFACT_NAME_Release=exercice5
-CND_ARTIFACT_PATH_Release=dist/Release/Cygwin-Windows/exercice5
-CND_PACKAGE_DIR_Release=dist/Release/Cygwin-Windows/package
-CND_PACKAGE_NAME_Release=exercice5.tar
-CND_PACKAGE_PATH_Release=dist/Release/Cygwin-Windows/package/exercice5.tar
+CND_PLATFORM_Release=GNU-Linux
+CND_ARTIFACT_DIR_Release=dist/Release/GNU-Linux
+CND_ARTIFACT_NAME_Release=exercice5_bis
+CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux/exercice5_bis
+CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux/package
+CND_PACKAGE_NAME_Release=exercice5bis.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/exercice5bis.tar
 #
 # include compiler specific variables
 #

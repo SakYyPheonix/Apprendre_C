@@ -8,15 +8,16 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "biblio.h"
 
 int main() {
     int valMois;
-    char mois[NBMAXCARA];
-    
+    char *mois;
+    mois = (char *) malloc(NBMAXCARA*sizeof(char));
     printf("Num du Mois : ");
     scanf("%d", &valMois);
-    moisNom(valMois, mois);
+    strcpy(mois, moisNom(valMois));
     printf("%s", mois);
 
     return (0);

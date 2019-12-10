@@ -1,9 +1,12 @@
 #include "biblio.h"
 
-void moisNom(int numDate, char *mois)
+char *moisNom(int numDate)
 {
-    char tablMois[12][NBMAXCARA] = {"Janvier\0", "Fevrier\0", "Mars\0", "Avril\0", "Mai\0", "Juin\0", "Juillet\0", "Aout\0", "Septembre\0", "Octobre\0", "Novembre\0", "Decembre\0"};
-    strcpy(mois, tablMois[numDate-1]);
+    char *leMois;
+    char tablMois[12][NBMAXCARA] = {"Janvier", "Fevrier", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Decembre"};
+    leMois = (char *) malloc((strlen(tablMois[numDate-1]) +1 )*sizeof(char));
+    strcpy(leMois, tablMois[numDate-1]);
+    return leMois;
     
 }
 

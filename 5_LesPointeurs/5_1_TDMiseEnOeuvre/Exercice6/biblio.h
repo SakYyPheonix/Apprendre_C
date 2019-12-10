@@ -19,7 +19,7 @@
 extern "C" {
 #endif
 
-    void supprimerE(char *chaineInit);
+    char *supprimerE(char *chaineInit);
 
 
 #ifdef __cplusplus

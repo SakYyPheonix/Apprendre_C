@@ -8,13 +8,18 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "biblio.h"
 
 int main() {
-    char avecE[NBCARAMAX];
-    char sansE[NBCARAMAX];
+    char *avecE;
+    avecE = (char *) malloc(NBCARAMAX * sizeof(char));
+    char *sansE;
+    sansE = (char *) malloc(NBCARAMAX * sizeof(char));
     
-    
+    gets(avecE);
+    strcpy(sansE, supprimerE(avecE));
+    printf("%s", sansE);
     
     return (0);
 }

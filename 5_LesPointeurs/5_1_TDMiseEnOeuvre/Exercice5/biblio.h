@@ -22,7 +22,7 @@
 extern "C" {
 #endif
 
-void moisNom(int numDate, char *mois);
+char *moisNom(int numDate);
 
 
 #ifdef __cplusplus
