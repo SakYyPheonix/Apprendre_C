@@ -12,7 +12,6 @@
 
 int main() {
     typePersonne *Personne;
-    Personne = (typePersonne *) malloc(sizeof(typePersonne));
     
     Personne = creePersonne();
     

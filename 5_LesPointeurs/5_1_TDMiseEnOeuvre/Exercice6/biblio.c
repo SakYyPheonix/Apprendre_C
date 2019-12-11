@@ -4,27 +4,22 @@
 char *supprimerE(char *chaineInit)
 {
     int i;
-    int compteurE;
     int compteur;
+    char tempon[NBCARAMAX];
     char *newChaine;
-    newChaine = (char *) malloc(NBCARAMAX * sizeof(char));
     
-    compteurE = 0;
     compteur = 0;
     for(i=0; i<strlen(chaineInit); i++)
     {
         if(chaineInit[i] != 'e')
         {
-            newChaine[i-compteurE] = chaineInit[i];
+            tempon[compteur] = chaineInit[i];
             compteur++;
-        }
-        else
-        {
-            compteurE++;
-        }
-        
+        }  
     }
-    newChaine[compteur+1] = '\0';
+    tempon[compteur] = '\0';
+    newChaine = (char *) malloc((strlen(tempon)+1) * sizeof(char));
+    strcpy(newChaine, tempon);
     return newChaine;
 }
 

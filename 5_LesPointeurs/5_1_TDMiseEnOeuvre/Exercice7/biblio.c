@@ -3,10 +3,12 @@
 char *saisirChaine(char messageEntree[NBMAXCARA])
 {
     char *chaineSaisi;
-    chaineSaisi = (char *) malloc(NBMAXCARA*sizeof(char));
+    char tempon[NBMAXCARA];
     
     printf("%s", messageEntree);
-    gets(chaineSaisi);
+    gets(tempon);
+    chaineSaisi = (char *) malloc((strlen(tempon)+1)*sizeof(char));
+    strcpy(chaineSaisi, tempon);
     return chaineSaisi;
     
 }

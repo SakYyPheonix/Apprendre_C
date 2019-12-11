@@ -14,11 +14,8 @@
 int main() {
     char intro[NBMAXCARA] = {"Donner une phrase : "};
     char *chaineRetour;
-    chaineRetour = (char *) malloc(NBMAXCARA*sizeof(char));
-    
     chaineRetour = saisirChaine(intro);
     printf("%s", chaineRetour);
-    
     return (0);
 }
 

@@ -14,6 +14,9 @@
 #ifndef BIBLIO_H
 #define BIBLIO_H
 #define NBCARAMAX 50
+#include <string.h>
+#include <stdlib.h>
+#include <stdio.h>
 
 #ifdef __cplusplus
 extern "C" {
