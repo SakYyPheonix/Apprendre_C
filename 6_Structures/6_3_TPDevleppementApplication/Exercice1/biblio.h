@@ -16,15 +16,25 @@
 extern "C" {
 #endif
 
-    typedef struct personne{
+    typedef struct {
         char nom[NBCARAMAX];
         char prenom[NBCARAMAX];
-        char numBadge[NBCARABADGE];
-        int numActivite;
-    }typePersonne;
+        typeDate dateDeNaissance;
+        int nbActivites;
+        sports activites[5];
+        int numCarte;
+    }typeAdherent;
     
-    typePersonne *creePersonne();
-
+    typedef struct {
+        unsigned int jour;
+        unsigned int mois;
+        unsigned int annee;
+    }typeDate;
+    
+    typedef enum {NATATION, BASKETBALL, HANDBALL, SQUASH, TENNIS}sports;
+    
+    //typeAdherent *creePersonne();
+    void afficherMenu(int nbAdh);
 
 #ifdef __cplusplus
 }
