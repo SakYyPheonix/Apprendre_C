@@ -8,11 +8,18 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "biblio.h"
 
 int main() {
+    typeDate dateAnniv;
     
-    afficherMenu(5);
+    //afficherMenu(5);
+    
+    dateAnniv.jour = 25;
+    dateAnniv.mois = 06;
+    dateAnniv.annee = 2001;
+    afficheDate(dateAnniv);
 
     return (0);
 }

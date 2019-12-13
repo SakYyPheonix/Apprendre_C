@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "biblio.h"
 
 /*typeAdherent *creePersonne()
@@ -34,5 +37,5 @@ void afficherMenu(int nbAdh)
 
 void afficheDate(typeDate date)
 {
-    
+    printf("%u/%u/%u", date.jour, date.mois, date.annee);
 }

@@ -8,6 +8,10 @@
  */
 
 #ifndef BIBLIO_H
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "biblio.h"
 #define BIBLIO_H
 #define NBCARAMAX 50
 #define NBCARABADGE 11
@@ -16,16 +20,25 @@
 extern "C" {
 #endif
 
-    typedef struct personne{
+    typedef struct {
         char nom[NBCARAMAX];
         char prenom[NBCARAMAX];
-        char numBadge[NBCARABADGE];
-        int numActivite;
+        typeDate dateDeNaissance;
+        int nbActivites;
+        sports activites[5];
+        int numCarte;
     }typeAdherent;
     
-    typeAdherent *creePersonne();
+    typedef struct {
+        unsigned int jour;
+        unsigned int mois;
+        unsigned int annee;
+    }typeDate;
     
-    void afficheDate(typeDate date);
+    typedef enum {NATATION, BASKETBALL, HANDBALL, SQUASH, TENNIS}sports;
+    
+    //typeAdherent *creePersonne();
+    void afficherMenu(int nbAdh);
 
 
 #ifdef __cplusplus
