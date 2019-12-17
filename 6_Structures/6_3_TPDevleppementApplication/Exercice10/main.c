@@ -12,11 +12,11 @@
 #include "biblio.h"
 
 int main() {
-    typeAdherent *adUn;
-    //adUn = (typeAdherent *) malloc(sizeof(typeAdherent));
-    adUn = creerUnAdherent();
-    afficherUnAdherent(adUn);
-     
+    typeAdherent *adUn[NBMAXADHE];
+    int compteurAdherent = 0;
+    adUn[1] = creerUnAdherent(); 
+    afficherUnAdherent(adUn[1]);
+    
     return (0);
 }
 

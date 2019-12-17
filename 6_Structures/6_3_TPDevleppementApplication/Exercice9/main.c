@@ -13,8 +13,8 @@
 
 int main() {
     typeAdherent *adUn[NBMAXADHE];
-    //adUn = (typeAdherent *) malloc(sizeof(typeAdherent));
-    adUn[1] = creerUnAdherent();
+    int compteurAdherent = 0;
+    adUn[1] = creerUnAdherent(); 
     afficherUnAdherent(adUn[1]);
     
     return (0);
