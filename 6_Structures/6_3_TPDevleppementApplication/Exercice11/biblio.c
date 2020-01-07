@@ -133,3 +133,14 @@ int supprimerUnAdherent(typeAdherent *tab[],int nro,int nb) {
     return nb-1;
 }
 
+void supprimerLesAdherents(typeAdherent *tab[], int nb) {
+    int i;
+    for(i=0; i<nb; i++)
+    {
+        supprimerUnAdherent(tab, 0, nb);
+    }
+}
+
+void modifierUnAdherents(typeAdherent *ad[], int nro) {
+    ad[nro] = creerUnAdherent();
+}

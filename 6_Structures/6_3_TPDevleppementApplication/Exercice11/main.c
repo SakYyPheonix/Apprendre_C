@@ -15,7 +15,7 @@ int main() {
     typeAdherent * ad[NBMAXADHE];
     int compteurAdherent = 0;
     int i;
-    int adSup;
+    int leAd;
     char reponse;
 
     do {
@@ -26,16 +26,20 @@ int main() {
             case 'A': compteurAdherent = ajouterUnAdherent(ad, compteurAdherent);
                 break;
             case 'S': printf("Adherents a supprimer : ");
-                scanf("%d", &adSup);
-                compteurAdherent = supprimerUnAdherent(ad, adSup, compteurAdherent);
+                scanf("%d", &leAd);
+                compteurAdherent = supprimerUnAdherent(ad, leAd-1, compteurAdherent);
                 break;
-            case 'M':;
+            case 'M': printf("Adherents a modifier : ");
+                scanf("%d", &leAd);
+                modifierUnAdherents(ad, leAd - 1);
                 break;
-            case 'V':;
+            case 'V':printf("Adherents a voir : ");
+                scanf("%d", &leAd);
+                afficherUnAdherent(ad[leAd - 1]);
                 break;
             case 'L': afficherLesAdherents(ad, compteurAdherent);
                 break;
-            case 'E':;
+            case 'E': supprimerLesAdherents(ad, compteurAdherent);
                 break;
         }
     } while (reponse != 'Q');

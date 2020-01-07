@@ -51,6 +51,10 @@ extern "C" {
     int ajouterUnAdherent(typeAdherent *tab[], int nb);
     
     int supprimerUnAdherent(typeAdherent *tab[],int nro,int nb);
+    
+    void supprimerLesAdherents(typeAdherent *ad[],int nb);
+    
+    void modifierUnAdherents(typeAdherent *ad[], int nro);
 
 #ifdef __cplusplus
 }
