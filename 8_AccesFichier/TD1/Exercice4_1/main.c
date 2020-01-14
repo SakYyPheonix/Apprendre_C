@@ -5,17 +5,14 @@
 #include <string.h>
 #include "biblio.h"
 #define NBPERSONNES 5
-#pragma pack(push, 1)
 
 int main() {
     FILE *texte;
     typePersonne *personne[NBPERSONNES];
     int i;
-    size_t retour;
     int valRetour;
     
-    
-    texte = fopen("/home/USERS/ELEVES/SNIR2019/cbourgouin/Apprendre_C/8_AccesFichier/textePersonneFwritePragma.txt", "w+");
+    texte = fopen("/home/USERS/ELEVES/SNIR2019/cbourgouin/Apprendre_C/8_AccesFichier/textePersonneFprintf.txt", "w+");
     if(texte == NULL){
         printf( "%s\n", strerror( errno ));
         exit( errno );
@@ -30,20 +27,12 @@ int main() {
     }
     
     for(i=0; i<NBPERSONNES; i++){
-        retour = fwrite(personne[i], sizeof(typePersonne), NBPERSONNES, texte );
-        if(retour != NBPERSONNES){
+        valRetour = fprintf(texte,"%d : %s %s %d %f %c\n", i, personne[i]->nom, personne[i]->prenom, personne[i]->age, personne[i]->poids, personne[i]->sexe);
+        if(valRetour < 0){
             printf( "%s\n", strerror( errno ) );
             exit( errno );
         }
     }
-    
-    valRetour = fclose(texte);
-    if(valRetour == EOF){
-        printf( "%s\n", strerror( errno ) );
-        exit( errno );
-    }
-    
-    
 
     return (0);
 }
