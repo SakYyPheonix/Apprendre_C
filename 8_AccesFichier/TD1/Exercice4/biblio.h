@@ -26,7 +26,7 @@ typedef struct personne{
 	char nom[NBMAXCAR];
 	char prenom[NBMAXCAR];
 	int age;
-	float poids;
+	int poids;
 	char sexe ; // 'f' ou 'm'
 }typePersonne;
 
