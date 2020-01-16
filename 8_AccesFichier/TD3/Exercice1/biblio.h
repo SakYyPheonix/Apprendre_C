@@ -33,10 +33,17 @@ extern "C" {
         short int bitPPix;
         int TypeDeComp;
         int tailleImg;
-        
-    }typeEnTeteFichierBmp;
-
-
+        int resHor;
+        int resVer;
+        int nbCouleur;
+        int nbCouImp;
+    }typeEnTeteImage;
+    
+    void afficherEnTeteFichierBmp(typeEnTeteFichierBmp bmp);
+    
+    void afficherEnTeteImageBmp(typeEnTeteImage img);
+    
+    
 #ifdef __cplusplus
 }
 #endif

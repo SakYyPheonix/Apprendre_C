@@ -3,7 +3,7 @@
  * File:   main.c
  * Author: cbourgouin
  *
- * Created on 15 janvier 2020, 11:09
+ * Created on 15 janvier 2020, 11:47
  */
 
 #include <stdio.h>
@@ -33,12 +33,6 @@ int main() {
     
     retour = fread(&largeur, sizeof(unsigned int), 1, fch);
     if(retour != 1){
-        printf("%s\n", strerror(errno));
-        exit(errno);
-    }
-    
-    valRetour = fseek(fch, 22, SEEK_SET);
-    if(valRetour != 0){
         printf("%s\n", strerror(errno));
         exit(errno);
     }
