@@ -21,7 +21,7 @@ int main() {
     typeEnTeteImage enTeteImg;
     
     
-    fch = fopen("/home/USERS/ELEVES/SNIR2019/cbourgouin/Apprendre_C/imgBMP/Exercice5.bmp", "r");
+    fch = fopen("/home/USERS/ELEVES/SNIR2019/cbourgouin/Apprendre_C/imgBMP/plasma.bmp", "r");
     if(fch == NULL){
         printf("%s\n", strerror(errno));
         exit(errno);

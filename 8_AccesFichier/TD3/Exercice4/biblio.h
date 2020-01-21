@@ -14,6 +14,7 @@
 #ifndef BIBLIO_H
 #define BIBLIO_H
 #pragma pack(push, 1)
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -38,6 +39,13 @@ extern "C" {
         unsigned int nbCouleur;
         unsigned int nbCouImp;
     }typeEnTeteImage;
+    
+    typedef struct {
+        unsigned char b;
+        unsigned char g;
+        unsigned char r;
+        unsigned char a;
+    }typeCouleur;
 
     void afficherEnTeteFichierBmp(typeEnTeteFichierBmp bmp);
     

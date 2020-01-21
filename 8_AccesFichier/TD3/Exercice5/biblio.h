@@ -14,17 +14,12 @@
 #ifndef BIBLIO_H
 #define BIBLIO_H
 #pragma pack(push, 1)
+#include <errno.h>
+
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-    typedef struct enTeteFichierBmp {
-        unsigned char signature[2];
-        unsigned int tailleFichier;
-        unsigned int reserve;
-        unsigned int adrInfImg;
-    }typeEnTeteFichierBmp;
-    
     typedef struct enTeteImage {
         unsigned int tailleET;
         unsigned int largeurImg;
@@ -38,10 +33,27 @@ extern "C" {
         unsigned int nbCouleur;
         unsigned int nbCouImp;
     }typeEnTeteImage;
+    
+    typedef struct enTeteFichierBmp {
+        unsigned char signature[2];
+        unsigned int tailleFichier;
+        unsigned int reserve;
+        unsigned int adrInfImg;
+        typeEnTeteImage enTeteImage;
+    }typeEnTeteFichierBmp;
+    
+    typedef struct {
+        unsigned char b;
+        unsigned char g;
+        unsigned char r;
+        unsigned char a;
+    }typeCouleur;
 
     void afficherEnTeteFichierBmp(typeEnTeteFichierBmp bmp);
     
     void afficherEnTeteImageBmp(typeEnTeteImage img);
+    
+    void afficherErreur();
 
 #ifdef __cplusplus
 }

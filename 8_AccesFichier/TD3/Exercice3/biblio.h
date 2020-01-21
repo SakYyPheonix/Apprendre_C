@@ -38,6 +38,13 @@ extern "C" {
         unsigned int nbCouleur;
         unsigned int nbCouImp;
     }typeEnTeteImage;
+    
+    typedef struct {
+        unsigned char b;
+        unsigned char g;
+        unsigned char r;
+        unsigned char a;
+    }typeCouleur;
 
     void afficherEnTeteFichierBmp(typeEnTeteFichierBmp bmp);
     
