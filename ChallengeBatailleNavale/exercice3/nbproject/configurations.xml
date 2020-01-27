@@ -37,6 +37,9 @@
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
       <compileType>
+        <linkerTool>
+          <commandLine>-lncursesw</commandLine>
+        </linkerTool>
       </compileType>
       <item path="biblio.c" ex="false" tool="0" flavor2="0">
       </item>

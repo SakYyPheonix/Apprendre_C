@@ -12,6 +12,7 @@
 #define BIBLIO_H
 #define NBCAR 255
 #define NBELE 5
+#define NBBATEAU 2
 
 #ifdef __cplusplus
 extern "C" {
