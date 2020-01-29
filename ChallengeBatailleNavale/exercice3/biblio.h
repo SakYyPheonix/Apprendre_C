@@ -26,6 +26,14 @@ extern "C" {
         char nom[NBCAR];
         int cases[NBELE];
     }typeBateau;
+    
+    typedef struct champDeBataille {
+        typeBateau porteAvions;
+        typeBateau cuirassé;
+        typeBateau croiseur;
+        typeBateau sousMarin;
+        typeBateau destroyeur;
+    };
 
     int torpillerBateau(typeBateau *bateau, int x, int y);
 
