@@ -28,8 +28,9 @@ int main(int argc, char** argv) {
     int soc;
     struct sockaddr_in infoServeur;
     float donneeAEnvoyer;
-    int donneeRecue;
+    float donneeRecue;
     int retour;
+    int tailleStr;
     
     
     //creation socket datagram
@@ -43,7 +44,7 @@ int main(int argc, char** argv) {
     
     infoServeur.sin_family = AF_INET;
     infoServeur.sin_port = htons(3333);
-    infoServeur.sin_addr.s_addr = inet_addr("172.18.58.147");
+    infoServeur.sin_addr.s_addr = inet_addr("127.0.0.1");
     //infoServeur.sin_zero = 0;
     
     //envoyer donne au serveur
@@ -57,13 +58,13 @@ int main(int argc, char** argv) {
     
     //recevoir la donne en provenance du serveur
     
-    retour = recvfrom(soc, &donneeRecue, sizeof(donneeRecue), 0, (struct sockaddr_in *) &infoServeur, );
+     retour = recvfrom(soc, &donneeRecue, sizeof(donneeRecue), 0, (struct sockaddr_in *)&infoServeur, &tailleStr);
     if (retour==-1){
-        printf("pb envoie : %s \n", strerror(errno));
+        printf("pb reception : %s \n", strerror(errno));
         exit(errno);
     }
     //afficher la donne
-    
+    printf("donné recu : %.2f", donneeRecue);
     // fermer socket
     close(soc);
     return (EXIT_SUCCESS);

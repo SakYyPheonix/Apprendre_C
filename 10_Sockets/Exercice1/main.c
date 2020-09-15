@@ -44,12 +44,12 @@ int main(int argc, char** argv) {
     
     infoServeur.sin_family = AF_INET;
     infoServeur.sin_port = htons(2222);
-    infoServeur.sin_addr.s_addr = inet_addr("172.18.58.147");
+    infoServeur.sin_addr.s_addr = inet_addr("127.0.0.1");
     //infoServeur.sin_zero = 0;
     
     //envoyer donne au serveur
     
-   donneeAEnvoyer = 0;
+   donneeAEnvoyer = 911;
     retour = sendto(soc, &donneeAEnvoyer, sizeof(donneeAEnvoyer), 0, (struct sockaddr_in *) &infoServeur, sizeof(infoServeur));
     if (retour==-1){
         printf("pb envoie : %s \n", strerror(errno));
