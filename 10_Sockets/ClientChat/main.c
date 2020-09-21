@@ -20,6 +20,7 @@
 #include <errno.h>
 #include <string.h>
 #include <unistd.h>
+#define TAILLE_STR 255
 
 /*
  * 
@@ -27,8 +28,8 @@
 int main(int argc, char** argv) {
     int soc;
     struct sockaddr_in infoServeur;
-    int donneeAEnvoyer;
-    int donneeRecue;
+    char donneeAEnvoyer[TAILLE_STR];
+    char donneeRecue[TAILLE_STR];
     int retour;
     int tailleStr;
     
@@ -43,7 +44,7 @@ int main(int argc, char** argv) {
     //initialisation structure info serv
     
     infoServeur.sin_family = AF_INET;
-    infoServeur.sin_port = htons(5555);
+    infoServeur.sin_port = htons(8888);
     infoServeur.sin_addr.s_addr = inet_addr("172.18.58.73");
     //infoServeur.sin_zero = 0;
     
