@@ -26,7 +26,8 @@
  * 
  */
 int main(int argc, char** argv) {
-    int soc;
+    int socEnvoie;
+    int socReception;
     struct sockaddr_in infoServeur;
     char donneeAEnvoyer[NB_CARA];
     char donneeRecue[NB_CARA];
@@ -35,9 +36,14 @@ int main(int argc, char** argv) {
 
 
     //creation socket datagram
-    soc = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP);
-    if (soc == -1) {
-        printf("pb creation socket : %s \n", strerror(errno));
+    socEnvoie = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP);
+    if (socEnvoie == -1) {
+        printf("pb creation socket d'envoie : %s \n", strerror(errno));
+        exit(errno);
+    }
+    socReception = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP);
+    if (socReception == -1) {
+        printf("pb creation socket de Reponse : %s \n", strerror(errno));
         exit(errno);
     }
 
@@ -48,7 +54,12 @@ int main(int argc, char** argv) {
     /*infoServeur.sin_zero = 0;*/
 
     //envoyer donne au serveur
-    retour = connect(soc, (struct sockaddr *) &infoServeur, sizeof (infoServeur));
+    retour = connect(socEnvoie, (struct sockaddr *) &infoServeur, sizeof (infoServeur));
+    if (retour == -1) {
+        printf("pb de connection : %s \n", strerror(errno));
+        exit(errno);
+    }
+    retour = connect(socReception, (struct sockaddr *) &infoServeur, sizeof (infoServeur));
     if (retour == -1) {
         printf("pb de connection : %s \n", strerror(errno));
         exit(errno);
@@ -57,14 +68,14 @@ int main(int argc, char** argv) {
     //envoyer le message
     while (strcmp(donneeAEnvoyer, "F") != 0) {
         gets(donneeAEnvoyer);
-        retour = write(soc, donneeAEnvoyer, NB_CARA);
+        retour = write(socEnvoie, donneeAEnvoyer, NB_CARA);
         if (retour == -1) {
             printf("pb envoie : %s \n", strerror(errno));
             exit(errno);
         }
 
         //recevoir la donne en provenance du serveur
-        retour = read(soc, donneeRecue, NB_CARA);
+        retour = read(socReception, donneeRecue, NB_CARA);
         if (retour == -1) {
             printf("pb reception : %s \n", strerror(errno));
             exit(errno);
@@ -75,7 +86,8 @@ int main(int argc, char** argv) {
     }
 
     // fermer socket
-    close(soc);
+    close(socEnvoie);
+    close(socReception);
 
     return 0;
 }
